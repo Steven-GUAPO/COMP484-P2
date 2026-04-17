@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Your Giga Pet</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+ 
+    <!-- Background scanline + grid texture overlay -->
+    <div class="bg-overlay" aria-hidden="true"></div>
+ 
+    <div class="device-shell">
+ 
+      <!-- ── TOP LABEL ── -->
+      <div class="device-top-label">
+        <span>GIGA PET™</span>
+      </div>
+ 
+      <!-- ── LCD SCREEN ── -->
+      <div class="screen-bezel">
+        <div class="screen">
+ 
+          <!-- Screen header bar — screen-title updates dynamically with mood -->
+          <div class="screen-header" id="screenHeader">
+            <span class="screen-title" id="screenTitle">STATUS</span>
+            <span class="pet-name-tag">▸ <span class="name">???</span></span>
+          </div>
+ 
+          <!-- Pet display stage -->
+          <div class="pet-stage">
+ 
+            <!-- CSS pixel-art dog sprite -->
+            <div class="pet-sprite" id="petSprite">
+              <div class="sprite-wrap">
+                <div class="px-ear px-ear-l"></div>
+                <div class="px-ear px-ear-r"></div>
+                <div class="px-head">
+                  <div class="px-eye px-eye-l"></div>
+                  <div class="px-eye px-eye-r"></div>
+                  <div class="px-nose"></div>
+                  <div class="px-mouth"></div>
+                </div>
+                <div class="px-body">
+                  <div class="px-tail"></div>
+                </div>
+                <div class="px-legs">
+                  <div class="px-leg"></div>
+                  <div class="px-leg"></div>
+                  <div class="px-leg"></div>
+                  <div class="px-leg"></div>
+                </div>
+              </div>
+            </div>
+ 
+            <!-- Speech bubble — shown after each button press -->
+            <div class="speech-bubble hidden" id="speechBubble">
+              <p class="speech-text" id="speechText"></p>
+            </div>
+ 
+          </div><!-- /.pet-stage -->
+ 
+          <!-- Stats readout -->
+          <div class="stats-panel">
+            <div class="stat-row">
+              <span class="stat-label">WT</span>
+              <div class="stat-bar-track">
+                <div class="stat-bar weight-bar" id="weightBar"></div>
+              </div>
+              <span class="stat-value"><span class="weight">0</span><small>lbs</small></span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">HP</span>
+              <div class="stat-bar-track">
+                <div class="stat-bar happiness-bar" id="happinessBar"></div>
+              </div>
+              <span class="stat-value"><span class="happiness">0</span><small>wags</small></span>
+            </div>
+            <!-- NEW stat bar: Energy-->
+            <div class="stat-row">
+              <span class="stat-label">EN</span>
+              <div class="stat-bar-track">
+                <div class="stat-bar energy-bar" id="energyBar"></div>
+              </div>
+              <span class="stat-value"><span class="energy">0</span><small>zaps</small></span>
+            </div>
+          </div>
+ 
+        </div><!-- /.screen -->
+      </div><!-- /.screen-bezel -->
+ 
+      <!-- ── BUTTON PAD ── -->
+      <div class="button-pad">
+        <button class="action-btn treat-button">
+          <span class="btn-icon">🦴</span>
+          <span class="btn-label">TREAT</span>
+        </button>
+        <button class="action-btn play-button">
+          <span class="btn-icon">🎾</span>
+          <span class="btn-label">PLAY</span>
+        </button>
+        <button class="action-btn exercise-button">
+          <span class="btn-icon">🏃</span>
+          <span class="btn-label">RUN</span>
+        </button>
+        <!-- NEW BUTTON: Nap — restores energy, decreases happiness -->
+        <button class="action-btn nap-button">
+          <span class="btn-icon">💤</span>
+          <span class="btn-label">NAP</span>
+        </button>
+      </div>
+ 
+    </div><!-- /.device-shell -->
+ 
+    <!-- jQuery must load FIRST, then our script -->
+    <script
+      src="https://code.jquery.com/jquery-2.2.1.min.js"
+      integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+      crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
